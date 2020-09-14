@@ -42,9 +42,15 @@ def play(songs)
   case
     when (1..9).include?(selection.to_i)
       puts "Playing " + songs[selection.to_i - 1]
-    when songs.any? { |song| song.include?(selection)}
-      x = songs.select { |song| song.include?(selection)}
-      puts "Playing " + x.first
+      
+    #This tests a selection of just a song name
+
+    # when songs.any? { |song| song.include?(selection) }
+    #   arr = songs.select { |song| song.include?(selection) }
+    #   puts "Playing " + arr.first
+    
+    when songs.include?(selection)
+      puts "Playing " + selection
     else
       puts "Invalid input, please try again"
   end
